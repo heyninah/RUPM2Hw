@@ -1,0 +1,10 @@
+public class SortingNode {
+		
+	public int info;
+	public SortingNode next;
+
+	public SortingNode(int info, SortingNode next){
+		this.info = info;
+		this.info = next;
+	}
+}

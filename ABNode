@@ -1,0 +1,11 @@
+package arbitraryQueue;
+
+public class ABNode {
+public Object info;
+public ABNode next;
+
+public ABNode(Object info, ABNode next) {
+	this.info = info;
+	this.next = next;
+}
+}

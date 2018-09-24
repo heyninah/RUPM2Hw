@@ -1,0 +1,66 @@
+package arbitraryQueue;
+
+public class ArbitraryQueue {
+
+	ABNode head;
+	public ArbitraryQueue(){
+		head = null;
+	}
+	public void Push(Object info) {
+		if (head== null) {
+			head = new ABNode(info,null);
+		}
+		else {
+			ABNode NewNode = new ABNode(info,head);
+			head = NewNode;
+		}
+		
+	}
+
+	public void Enqueue(Object info) {
+		if (head ==null) {
+			head = new ABNode(info,null);
+		}
+		else {
+			ABNode pointer = head;
+			while(pointer.next != null) {
+				pointer = pointer.next;
+			}
+			pointer.next = new ABNode(info,null);
+		}
+	}
+	public Object Pop() {
+		try{
+		Object pop = head.info;
+		head = head.next;
+		return pop;
+		} catch(NullPointerException error){
+		return error;
+		}
+		
+	}
+	public Object Dequeue(){
+		try{
+		ABNode pointer = head;
+		while(pointer.next.next != null) {
+			pointer = pointer.next;
+		}
+		Object dequeue = pointer.next.info;
+		pointer.next = null;
+		return dequeue;
+		} catch(NullPointerException error){
+		return error;
+		}
+	}
+	public Object Traverse(int index){
+		try{
+		ABNode pointer = head;
+		for(int x=0; x<index-1;x++) {
+			pointer = pointer.next;
+		}
+		return pointer.info;
+	} catch(NullPointerException error){
+	return error;
+	}
+	}
+}
